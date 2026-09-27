@@ -1,0 +1,42 @@
+# Global experiment configuration
+model:
+  name: "distilbert-base-uncased"
+  projection_dim: 128
+  max_length: 128
+
+training:
+  epochs: 5
+  batch_size: 16
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  temperature: 0.07       # InfoNCE temperature (tau)
+  base_temperature: 0.07
+  seed: 42
+
+paths:
+  data_dir: "data/processed"
+  save_dir: "experiments"
+  raw_dir: "data/raw"
+  synthetic_dir: "data/synthetic"
+
+evaluation:
+  bootstrap_iterations: 1000
+  bootstrap_alpha: 0.05
+  latency_runs: 100
+  threshold: 0.5          # Adversarial decision threshold
+
+held_out_family: "psych_empathy_exploit"   # Held-out family for RQ3 generalization test
+
+deployment:
+  latency_budget_ms: 25   # RQ6 real-time constraint
+  false_positive_target: 0.05
+
+# Research Questions Map -> Experiment -> Key Metric
+rq_experiment_map:
+  RQ1: "contrastive vs. commercial baseline AUROC"
+  RQ2: "contrastive vs. cross_entropy embedding geometry separation"
+  RQ3: "held_out_generalization F1 on psych families"
+  RQ4: "family_breakdown.cultural_bangla + cultural_banglish recall"
+  RQ5: "human_eval audit time & kappa score"
+  RQ6: "latency_stats p95_ms vs deployment.latency_budget_ms"
