@@ -19,6 +19,8 @@ from src.data.builder import build_dataset
 from src.train import train, get_device
 from src.models.detector import ContrastiveDetector
 from src.explainability.explainer import TacticExplainer
+from src.evaluation.rq3_held_out import run_rq3
+from src.evaluation.tsne_viz import main as run_tsne
 
 def run_demo():
     """Runs a live interactive CLI testing prompts with explainability."""
@@ -87,7 +89,9 @@ def run_demo():
 
 def main():
     parser = argparse.ArgumentParser(description="Master Thesis Runner")
-    parser.add_argument("--step", type=str, default="demo", choices=["data", "train_contrastive", "train_baseline", "evaluate_both", "demo"])
+    parser.add_argument("--step", type=str, default="demo",
+                        choices=["data", "train_contrastive", "train_baseline",
+                                 "evaluate_both", "rq3", "tsne", "demo"])
     parser.add_argument("--epochs", type=int, default=3)
     parser.add_argument("--batch_size", type=int, default=16)
     args = parser.parse_args()
@@ -103,10 +107,14 @@ def main():
         train(mode="cross_entropy", epochs=args.epochs, batch_size=args.batch_size)
     elif args.step == "evaluate_both":
         print(">>> Step: Training and Comparing Both Models...")
-        print("\n--- Training Proposed Contrastive Model ---")
         train(mode="contrastive", epochs=args.epochs, batch_size=args.batch_size)
-        print("\n--- Training Baseline Model ---")
         train(mode="cross_entropy", epochs=args.epochs, batch_size=args.batch_size)
+    elif args.step == "rq3":
+        print(">>> Step: RQ3 — Zero-Shot Held-Out Generalization Test...")
+        run_rq3()
+    elif args.step == "tsne":
+        print(">>> Step: t-SNE Embedding Visualization (RQ2 Geometric Proof)...")
+        run_tsne()
     elif args.step == "demo":
         run_demo()
 

@@ -1,47 +1,35 @@
 {
   "mode": "cross_entropy",
   "test_metrics": {
-    "precision": 0.9767441860465116,
-    "recall": 0.9767441860465116,
-    "f1": 0.9767441860465116,
-    "auroc": 0.9943735933983495,
-    "fpr": 0.016129032258064516,
-    "tp": 42,
-    "fp": 1,
-    "tn": 61,
-    "fn": 1
+    "precision": 0.9230769230769231,
+    "recall": 0.96,
+    "f1": 0.9411764705882353,
+    "auroc": 0.9815625,
+    "fpr": 0.0625,
+    "tp": 48,
+    "fp": 4,
+    "tn": 60,
+    "fn": 2
   },
   "confidence_intervals": {
     "precision": [
-      0.9210526315789473,
-      1.0
+      0.8444117647058823,
+      0.9821506892230576
     ],
     "recall": [
-      0.9210263157894737,
+      0.8935980243161094,
       1.0
     ],
     "f1": [
-      0.935064935064935,
-      1.0
+      0.8888888888888888,
+      0.9814814814814815
     ],
     "auroc": [
-      0.9836784974648289,
-      1.0
+      0.9558463429792303,
+      0.9990580847723705
     ]
   },
   "family_breakdown": {
-    "technical_instruction_override": {
-      "precision": 1.0,
-      "recall": 0.9761904761904762,
-      "f1": 0.9879518072289156,
-      "auroc": NaN,
-      "fpr": 0.0,
-      "tp": 41,
-      "fp": 0,
-      "tn": 0,
-      "fn": 1,
-      "sample_count": 42
-    },
     "benign_standard": {
       "precision": 0.0,
       "recall": 0.0,
@@ -50,21 +38,45 @@
       "fpr": 0.0,
       "tp": 0,
       "fp": 0,
-      "tn": 61,
+      "tn": 59,
       "fn": 0,
-      "sample_count": 61
+      "sample_count": 59
+    },
+    "psych_urgency_crisis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "auroc": NaN,
+      "fpr": 0.0,
+      "tp": 2,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "sample_count": 2
+    },
+    "cultural_bangla": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "auroc": NaN,
+      "fpr": 0.0,
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "sample_count": 1
     },
     "benign_emotional_hard_negative": {
       "precision": 0.0,
       "recall": 0.0,
       "f1": 0.0,
       "auroc": NaN,
-      "fpr": 1.0,
+      "fpr": 0.8,
       "tp": 0,
-      "fp": 1,
-      "tn": 0,
+      "fp": 4,
+      "tn": 1,
       "fn": 0,
-      "sample_count": 1
+      "sample_count": 5
     },
     "cultural_banglish": {
       "precision": 1.0,
@@ -77,13 +89,49 @@
       "tn": 0,
       "fn": 0,
       "sample_count": 1
+    },
+    "psych_hypothetical_sandbox": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "auroc": NaN,
+      "fpr": 0.0,
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "sample_count": 1
+    },
+    "psych_roleplay_dissociation": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "auroc": NaN,
+      "fpr": 0.0,
+      "tp": 3,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "sample_count": 3
+    },
+    "technical_instruction_override": {
+      "precision": 1.0,
+      "recall": 0.9523809523809523,
+      "f1": 0.975609756097561,
+      "auroc": NaN,
+      "fpr": 0.0,
+      "tp": 40,
+      "fp": 0,
+      "tn": 0,
+      "fn": 2,
+      "sample_count": 42
     }
   },
   "latency_stats": {
-    "mean_ms": 4.852198302396573,
-    "std_ms": 0.8280881888084486,
-    "p50_ms": 4.7850624832790345,
-    "p95_ms": 6.09864582947921,
-    "p99_ms": 6.567824602243491
+    "mean_ms": 5.101986285299063,
+    "std_ms": 0.556704984852737,
+    "p50_ms": 5.245771026238799,
+    "p95_ms": 5.731104128062725,
+    "p99_ms": 6.033461712067947
   }
 }
