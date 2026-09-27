@@ -91,7 +91,7 @@ def main():
     parser = argparse.ArgumentParser(description="Master Thesis Runner")
     parser.add_argument("--step", type=str, default="demo",
                         choices=["data", "train_contrastive", "train_baseline",
-                                 "evaluate_both", "rq3", "tsne", "ablation", "ui", "demo"])
+                                 "evaluate_both", "rq3", "tsne", "rq4", "ablation", "ui", "demo"])
     parser.add_argument("--epochs", type=int, default=3)
     parser.add_argument("--batch_size", type=int, default=16)
     args = parser.parse_args()
@@ -115,6 +115,10 @@ def main():
     elif args.step == "tsne":
         print(">>> Step: t-SNE Embedding Visualization (RQ2 Geometric Proof)...")
         run_tsne()
+    elif args.step == "rq4":
+        print(">>> Step: RQ4 — Adversarial Perturbation Degradation Curve...")
+        from src.evaluation.rq4_robustness import run_rq4_curve
+        run_rq4_curve()
     elif args.step == "ablation":
         print(">>> Step: Hard-Negative Ablation Study...")
         from src.evaluation.ablation import main as run_ablation

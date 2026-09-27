@@ -294,6 +294,31 @@ with tab3:
     else:
         st.caption("Run `python3 -m src.evaluation.ablation` to compute ablation metrics.")
 
+    st.divider()
+
+    # RQ4 Robustness Section
+    st.markdown("#### 3. RQ4: Adversarial Obfuscation & Perturbation Degradation Curve")
+    st.markdown("""
+    Evaluates detector recall under stochastic adversarial noise (0% to 30% perturbation strength)
+    including leetspeak, adjacent character swaps (typos), and character omissions.
+    """)
+    rq4_img_path = "experiments/rq4_robustness_curve.png"
+    if os.path.exists(rq4_img_path):
+        st.image(rq4_img_path, caption="RQ4: Detection Rate Degradation Curve (InfoNCE vs Cross-Entropy vs Naive Regex)", use_container_width=True)
+    else:
+        st.warning("RQ4 curve plot not found. Run `python run_experiments.py --step rq4` to generate.")
+
+    rq4_json_path = "experiments/rq4_degradation_results.json"
+    if os.path.exists(rq4_json_path):
+        with open(rq4_json_path, "r") as f:
+            rq4_data = json.load(f)
+        st.markdown("**Quantitative Degradation Summary:**")
+        cols_summary = st.columns(4)
+        cols_summary[0].metric("0% Perturbation", f"{rq4_data['contrastive_recall'][0]*100:.1f}%", "Baseline")
+        cols_summary[1].metric("10% Perturbation", f"{rq4_data['contrastive_recall'][2]*100:.1f}%", f"{rq4_data['contrastive_recall'][2]*100 - rq4_data['regex_recall'][2]*100:+.0f}% vs Regex")
+        cols_summary[2].metric("20% Perturbation", f"{rq4_data['contrastive_recall'][4]*100:.1f}%", f"{rq4_data['contrastive_recall'][4]*100 - rq4_data['regex_recall'][4]*100:+.0f}% vs Regex")
+        cols_summary[3].metric("30% Perturbation", f"{rq4_data['contrastive_recall'][6]*100:.1f}%", f"{rq4_data['contrastive_recall'][6]*100 - rq4_data['regex_recall'][6]*100:+.0f}% vs Regex")
+
 # ==============================================================================
 # TAB 4: Human Auditor Evaluation Study (RQ5 Protocol)
 # ==============================================================================
