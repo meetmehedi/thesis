@@ -47,3 +47,12 @@ Thumbs.db
 
 # Data — raw downloads (reproducible via builder.py)
 data/raw/
+
+# LaTeX build artifacts
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+missfont.log
