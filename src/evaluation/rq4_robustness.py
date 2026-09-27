@@ -122,9 +122,14 @@ def run_rq4_curve(strengths=None):
 
     regex_filter = NaiveRegexFilter()
 
-    # Load test adversarial queries (label == 1)
-    test_records = load_jsonl("data/processed/test.jsonl")
+    # Load test adversarial queries (label == 1) from 25k dataset if available
+    test_path = "data/processed_25k/test.jsonl" if os.path.exists("data/processed_25k/test.jsonl") else "data/processed/test.jsonl"
+    test_records = load_jsonl(test_path)
     adv_records = [r for r in test_records if r["label"] == 1]
+    # Sample 500 adversarial queries if dataset is large for rapid benchmarking across 6 perturbation steps
+    if len(adv_records) > 500:
+        random.seed(42)
+        adv_records = random.sample(adv_records, 500)
     raw_texts = [r["text"] for r in adv_records]
     total_adv = len(adv_records)
 

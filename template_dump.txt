@@ -1,0 +1,447 @@
+[0] Title [Camel Case, font size 24]   
+[1] This project is submitted to the Department of Computer Science and Engineering, Dhaka International University, in partial fulfillment to the requirements of Bachelor of Science (B. Sc.) in Computer Science and Engineering (CSE). [font size 13, Spacing 1.5]
+[2] Submitted By [font size 14]
+[3] Name
+[4] Reg. No
+[5] Roll No
+[6] Abid (Name will be bold)
+[7] 000001
+[8] 01
+[9] Babul  (with font size 12)
+[10] 000002
+[11] 02
+[12] Kalam
+[13] 000003
+[14] 03
+[15] Dalim
+[16] 000004
+[17] 04
+[18] Maruf
+[19] 000005
+[20] 05
+[21] CSE-425, Project Work [font size 15]
+[22] Batch: 62nd (1st Shift), Session: 2021-22
+[23] Supervised By [font size 14]
+[24] Name
+[25] Designation [font size 12]
+[26]   
+[27] Department of Computer Science and Engineering
+[28] Faculty of Science and Engineering
+[29] Dhaka International University
+[30] Dhaka, Bangladesh
+[31] January-2026 [font size 14]
+[32] [N.B. All the text font will be Times New Roman]
+[33] Dhaka International University 
+[34] Department of Computer Science and Engineering
+[35]  
+[36] Declaration [font size 20]
+[37] We hereby declare that; this project “Title” has been carried out by us and it has been submitted for the award of the B.Sc. degree. We also certify that this project was prepared by us for the purpose of fulfillment of the requirements for the Bachelor of Science (B.Sc.) in Computer Science and Engineering. [font size 13, spacing 1.5]
+[38] ......................................BB.Sc. in CSE, Roll No: 02 Reg. No: 000002, Shift: 1stBatch: ----, Session: ----Dhaka International University......................................BB.Sc. in CSE, Roll No: 02 Reg. No: 000002, Shift: 1stBatch: ----, Session: ----Dhaka International University......................................AB.Sc. in CSE, Roll No: 01 Reg. No: 236514, Shift: 1st Batch: 62nd, Session: 2020-21Dhaka International University......................................AB.Sc. in CSE, Roll No: 01 Reg. No: 236514, Shift: 1st Batch: 62nd, Session: 2020-21Dhaka International UniversityAuthors Signature [font size 12]
+[39] ......................................
+[40] B
+[41] B.Sc. in CSE, Roll No: 02
+[42]  Reg. No: 000002, Shift: 1st
+[43] Batch: ----, Session: ----
+[44] Dhaka International University
+[45] ......................................
+[46] B
+[47] B.Sc. in CSE, Roll No: 02
+[48]  Reg. No: 000002, Shift: 1st
+[49] Batch: ----, Session: ----
+[50] Dhaka International University
+[51] ......................................
+[52] A
+[53] B.Sc. in CSE, Roll No: 01
+[54]  Reg. No: 236514, Shift: 1st 
+[55] Batch: 62nd, Session: 2020-21
+[56] Dhaka International University
+[57] ......................................
+[58] A
+[59] B.Sc. in CSE, Roll No: 01
+[60]  Reg. No: 236514, Shift: 1st 
+[61] Batch: 62nd, Session: 2020-21
+[62] Dhaka International University
+[63] ...................................... EB.Sc. in CSE, Roll No: 05 Reg. No: 000005, Shift: 1stBatch: ----, Session: ----Dhaka International University...................................... EB.Sc. in CSE, Roll No: 05 Reg. No: 000005, Shift: 1stBatch: ----, Session: ----Dhaka International University......................................DB.Sc. in CSE, Roll No: 04 Reg. No: 000004, Shift: 1stBatch: ----, Session: ----Dhaka International University......................................DB.Sc. in CSE, Roll No: 04 Reg. No: 000004, Shift: 1stBatch: ----, Session: ----Dhaka International University......................................CB.Sc. in CSE, Roll No: 03Reg. No: 000003, Shift: 1stBatch: ----, Session: ----Dhaka International University......................................CB.Sc. in CSE, Roll No: 03Reg. No: 000003, Shift: 1stBatch: ----, Session: ----Dhaka International University
+[64] ......................................
+[65]  E
+[66] B.Sc. in CSE, Roll No: 05
+[67]  Reg. No: 000005, Shift: 1st
+[68] Batch: ----, Session: ----
+[69] Dhaka International University
+[70] ......................................
+[71]  E
+[72] B.Sc. in CSE, Roll No: 05
+[73]  Reg. No: 000005, Shift: 1st
+[74] Batch: ----, Session: ----
+[75] Dhaka International University
+[76] ......................................
+[77] D
+[78] B.Sc. in CSE, Roll No: 04
+[79]  Reg. No: 000004, Shift: 1st
+[80] Batch: ----, Session: ----
+[81] Dhaka International University
+[82] ......................................
+[83] D
+[84] B.Sc. in CSE, Roll No: 04
+[85]  Reg. No: 000004, Shift: 1st
+[86] Batch: ----, Session: ----
+[87] Dhaka International University
+[88] ......................................
+[89] C
+[90] B.Sc. in CSE, Roll No: 03
+[91] Reg. No: 000003, Shift: 1st
+[92] Batch: ----, Session: ----
+[93] Dhaka International University
+[94] ......................................
+[95] C
+[96] B.Sc. in CSE, Roll No: 03
+[97] Reg. No: 000003, Shift: 1st
+[98] Batch: ----, Session: ----
+[99] Dhaka International University
+[100]         
+[101] Date: .................................. 
+[102] Supervisor’s Signature
+[103] ..............................................................
+[104] Md. Shariful Islam
+[105] Lecturer
+[106] Dept. of Computer Science and Engineering
+[107] Dhaka International University
+[108] Dhaka International University 
+[109] Department of Computer Science and Engineering
+[110]  
+[111]   
+[112] Supervisor’s Statement [font size 20]
+[113] This is to certify that the project paper entitled as “Title” submitted by A, Roll No:- 01; B, Roll No:- 02; C, Roll No:- 03; D, Roll No:- 04; E, Roll No:-05; has been carried out under my supervision. This project has been prepared in partial fulfillment of the requirement for the Degree of B.Sc. in Computer Science & Engineering, Department of Computer Science & Engineering, Dhaka International University, Dhaka, Bangladesh. [font size 13, spacing 1.5]
+[114] Date: ……………………….         
+[115] Supervisor’s Signature
+[116] ……...........…...……………………
+[117] Md. Shariful Islam
+[118] Lecturer
+[119] Dept. of Computer Science & Engineering
+[120] Dhaka International University [font size 12]
+[121] Approval [font size 20]
+[122] The project report as “Title” submitted by A, B, C, D, E to the Department of Computer Science and Engineering, Dhaka International University, has been accepted as satisfactory for the partial fulfillment of the requirements for the degree of B.Sc. in Computer Science and Engineering and approved as to its style and contents. [font size 13, spacing 1.5]
+[123] Board of Honorable Examiners [font size 12]
+[124] 1. Chairman
+[125] ..........................................................................
+[126] Prof. Dr. Md. Abdul Based
+[127] Chairman,
+[128] Dept. of Computer Science and Engineering,
+[129] Dhaka International University
+[130] 2. Internal Member
+[131] ......................................................................
+[132] Mst. Jahanara Akhtar
+[133] Professor,
+[134] Dept. of Computer Science and Engineering,
+[135] Dhaka International University 
+[136] 3. Supervisor and Member
+[137] .....................................................................
+[138] Md. Shariful Islam
+[139] Lecturer,
+[140] Dept. of Computer Science and Engineering,
+[141] Dhaka International University
+[142] Acknowledgements [font size 20]
+[143] We would like to pay our gratitude to the Almighty Allah who created us with not only the ability to design and program this system but also the power of practice.
+[144] We would also like to express our sincere thanks to our respected supervisor Md. Shariful Islam, Lecturer, Department of CSE, Dhaka International University for his continuous encouragement, motivation and professional guidance during the work of this project. We would like to thank all the faculty members for their valuable time spent on requirements analysis and evaluation of the project work.
+[145] We would like to express our sincere and cordial gratitude to the people those who have supported us directly, provided mental encouragement. We are also thankful to our family and friends who have contributed directly or indirectly the development word and its associated activities.
+[146] We warmly thank Prof. Dr. Md. Abdul Based, Chairman, Department of Computer Science and Engineering and Mst. Jahanara Akhtar, Professor, Department of Computer Science and Engineering, Dhaka International University for their valuable advice and moral support. Their extensive discussion around work and interesting exploration in operations has been very helpful for this study. 
+[147] Finally, we would like to dedicate this project to our teachers for their love, encouragement and professional guidance throughout the project. [font size 13, spacing 1.5]
+[148] Dedicated to
+[149] Our Parents
+[150] &
+[151] Teachers
+[152] Abstract [font size 20]
+[153] Write the Abstract of your Project here. Try to write the Abstract within one paragraph. No need to write any keywords in different point or paragraph. [font size 13, spacing 1.5] [Abstract may contain 150-300 words]
+[154] Must create it using table and omit the borderMust create it using table and omit the borderTable of Contents [font size 20]
+[155] Must create it using table and omit the border
+[156] Must create it using table and omit the border
+[157] Declaration
+[158] i
+[159] Supervisor’s Statement
+[160] ii
+[161] Approval
+[162] iii
+[163] Acknowledgments
+[164] iv
+[165] Dedication
+[166] v
+[167] Abstract
+[168] vi
+[169] Table of Contents
+[170] vii
+[171] List of Figures
+[172] x
+[173] List of Tables [font size 12, row height 0.23, spacing 1.15]
+[174] xi
+[175]                    
+[176] Chapter 1:  Introduction [font size 14, spacing 1.5]
+[177] 1
+[178] 1.1 Overview …[must include red colored section]……….………….....
+[179] 1
+[180] 1.2 Problem Definition ………[must include red colored section]..…….
+[181] 2
+[182] 1.3 Objectives……….………[must include red colored section]……….
+[183] 2
+[184] 1.4 Motivation……………[must include red colored section]……….....
+[185] 4
+[186] 1.5 Biological Background……………………………………………….
+[187] 4
+[188] 1.5.1 DNA…………………………………………………………..
+[189] 4
+[190] 1.5.2 Sequence Feature: Gene……………………………………….
+[191] 6
+[192] 1.5.3 Sequence Feature: Regulatory Sites…………………………….
+[193] 6
+[194] 1.5.4 Sequence Feature: Repetitive Elements………………………...
+[195] 8
+[196] 1.6 Biosequence Analysis………………………………………………...
+[197] 8
+[198] 1.6.1 Motivation……………………………………………………..
+[199] 8
+[200] 1.6.2 Sequence Evolution……………………………………………
+[201] 10
+[202] 1.6.3 Sequence Homology…………………………………………...
+[203] 10
+[204] 1.6.4 Motif…………………………………………………………..
+[205] 12
+[206] 1.6.5 Variation in Motif……………………………………………...
+[207] 13
+[208] 1.7 Report Layout…[font size 12, row height 0.23, spacing 1.15]..…..
+[209] 13
+[210]        
+[211] Chapter 2:  Literature Review 
+[212] 14
+[213] 2.1 Overview…………………………………………………………….
+[214] 14
+[215] 2.2 Representation of Motif……………………………………………...
+[216] 14
+[217]          2.2.1 Consensus Sequence…………………………………………
+[218] 15
+[219]          2.2.2 Weight Matrix Model-WMM…………………………………
+[220] 16
+[221] 2.3 Approaches To Solve the Problem…………………………………...
+[222] 18
+[223]           2.3.1 Enumerative Algorithm……………………………………...
+[224] 18
+[225]           2.3.2 Local Search Based Algorithm……………………………….
+[226] 19
+[227] 2.5 Project/Research Gap and Contribution……………………………… 
+[228] 24
+[229] 2.4 Related works………[must include red colored section]…..………...
+[230] 25
+[231]     
+[232] Chapter 3:  Modifying SPSTAR for Faster Response 
+[233] 26
+[234] 3.1 Overview…………………………………………………………….
+[235] 26
+[236] 3.2 The SPSTAR Algorithm……………………………………………...
+[237] 26
+[238] 3.3 Implementation Details of SPSTAR Algorithm………………………
+[239] 27
+[240] 3.4 Modified SPSTAR Implementation…………………………………..
+[241] 28
+[242] 3.5 Performance Comparison of SPSTAR and Modified SPSTAR……….
+[243] 31
+[244] 3.6 Conclusion…………………………………………………………...
+[245] 32
+[246] Chapter 4:  Finding Motif Using Suffix Tree 
+[247] 33
+[248] 4.1 Overview…………………………………………………………….
+[249] 33
+[250] 4.2 Definition of Suffix Tree and Basic Properties……………………….
+[251] 33
+[252] 4.3 Algorithm for Constructing Suffix Tree and Its Complexities………...
+[253] 34
+[254] 4.4 Implementation Details of Suffix Tree……………………………….
+[255] 36
+[256] 4.5 Motif Finding Using Suffix Tree……………………………………..
+[257] 37
+[258] 4.6 Conclusion…………………………………………………………...
+[259] 41
+[260] Chapter 5:  Performance Measurements
+[261] 42
+[262] 5.1 Overview……………………………………………………………..
+[263] 42
+[264] 5.2 Defining the Performance……………………………………………
+[265] 42
+[266] 5.3 Factors Effecting Performance of a Motif Finder…………………….
+[267] 43
+[268] 5.4 Test Data…………………………………………………………….
+[269] 43
+[270] 5.5 Performance Comparison of SPSTAR and Proposed Method……....
+[271] 43
+[272] 5.6 Conclusion…………………………………………………………...
+[273] 46
+[274]    
+[275] Chapter 6:  Conclusion and Future Scope
+[276] 47
+[277] 6.1 Discussion……………………………………………………………
+[278] 47
+[279] 6.2 Limitations…………………………………………………………...
+[280] 48
+[281] 6.3 Future Work…………….……………………………………………
+[282] 48
+[283] References
+[284] ……………………………………………………………………...
+[285] 49
+[286]   
+[287] Appendix A
+[288] 50
+[289] Appendix B
+[290] 55
+[291] Appendix C
+[292] 63
+[293] Bibliography
+[294] 67
+[295] [N.B. The name of Chapter 1, 2 and 6 remain same. But you must change other chapter’s name according to your project or research.]
+[296] List of Figures [Font Size 20]
+[297] Figure No.
+[298] Figure Name [font size 12]
+[299]  Page No.
+[300] Figure 1.1
+[301] A motif problem and its solution   [Font Size 12, spacing 1.15]……………
+[302] 2
+[303] Figure 1.2
+[304] A planted (15,4) motif and its solution……………………………………….
+[305] 3
+[306] Figure 1.3
+[307] Amount of sequence data in GenBank from 1982 to 2000…………………
+[308] 9
+[309] Figure 2.1
+[310] Pseudo code for EM algorithm……………………………………………….
+[311] 20
+[312] Figure 2.2
+[313] Pseudo code for MEME algorithm……………………………………………
+[314] 21
+[315] Figure 2.3
+[316] Pseudo code for CONSENSUS algorithm……………………………………
+[317] 22
+[318] Figure 2.4
+[319] Pseudo code for MULTIPROFILER algorithm………………………………
+[320] 23
+[321] Figure 3.1
+[322] Pseudo code for GIBBS SAMPLING algorithm…………………...………...
+[323] 24
+[324] Figure 3.2
+[325] Pseudo code for SPSTAR algorithm………………………………………….
+[326] 27
+[327] Figure 3.3
+[328] 5 Sequence data, each of 10 characters long………………………………….
+[329] 32
+[330] Figure 3.4
+[331] Pseudo code for modified SPSTAR algorithm……………………………….
+[332] 35
+[333] Figure 4.1
+[334] Performance comparison of SPSTAR and modified SPSTAR……………….
+[335] 36
+[336] Figure 4.2
+[337] Pseudo code for MULTIPROFILER algorithm………………………………
+[338] 38
+[339] Figure 4.3
+[340] Pseudo code for MULTIPROFILER algorithm………………………………
+[341] 40
+[342]   [N.B. 2.1 means First Figure of Chapter 2. Similarly, 4.3 means third figure of chapter 4.]
+[343] List of Tables [font size 20]
+[344] Table No.
+[345] Caption [font size 12]
+[346]  Page No.
+[347] Table 1.1
+[348] A motif problem and its solution [Font Size 12, spacing 1.15]……………
+[349] 2
+[350] Table 1.2
+[351] A planted (15,4) motif and its solution……………………………………….
+[352] 3
+[353] Table 1.3
+[354] Amount of sequence data in GenBank from 1982 to 2000…………………
+[355] 9
+[356] Table 2.1
+[357] Pseudo code for EM algorithm……………………………………………….
+[358] 20
+[359] Table 2.2
+[360] Pseudo code for MEME algorithm……………………………………………
+[361] 21
+[362] Table 2.3
+[363] Pseudo code for CONSENSUS algorithm……………………………………
+[364] 22
+[365] Table 3.1
+[366] Pseudo code for GIBBS SAMPLING algorithm…………………...………...
+[367] 24
+[368] Table 3.2 
+[369] Pseudo code for SPSTAR algorithm………………………………………….
+[370] 27
+[371] Table 3.3 
+[372] 5 Sequence data, each of 10 characters long………………………………….
+[373] 32
+[374] Table 3.4 
+[375] Pseudo code for modified SPSTAR algorithm……………………………….
+[376] 35
+[377] Table 4.1 
+[378] Performance comparison of SPSTAR and modified SPSTAR……………….
+[379] 36
+[380] Table 4.2 
+[381] Pseudo code for MULTIPROFILER algorithm………………………………
+[382] 38
+[383] Table 4.3 
+[384] Pseudo code for MULTIPROFILER algorithm………………………………
+[385] 40
+[386] [N.B. 2.1 means First table of Chapter 2. Similarly, 5.2 means second table of Chapter 5.]  
+[387]  
+[388] 1Introduction [Camel case, font 22]Chapter 1Introduction [Camel case, font 22]Chapter 
+[389] 1
+[390] Introduction [Camel case, font 22]
+[391] Chapter 
+[392] 1
+[393] Introduction [Camel case, font 22]
+[394] Chapter 
+[395] 1.1 Write A Point [font size 14 and camel case, spacing 1.5]
+[396] Write some texts. You may use references [1]. This [1] represents the reference. Please write this in the REFERENCES section also. [font size 12, spacing 1.15]
+[397] 1.2 Write A Point [font size 14 and camel case, spacing 1.5]
+[398] Write some texts. Give the appropriate figure if needed. In Figure 1.1, the life cycle of web application is shown. [font size 12, spacing 1.15, 1 line gap between text and figure.]
+[399] Figure 1.1: Web Application Life Cycle [font size 12, center alignment,
+[400] Figure 1.1 means the first Figure of Chapter 1, 1 line gap after figure name.]
+[401] 1.3 Write A Point [font size 14 and camel case, spacing 1.5]
+[402] BUY MY ACCOUNT is a specialized online marketplace dedicated to the buying and selling of online accounts across various platforms, including social media, gaming, e-commerce, and more. [font size 12, spacing 1.15, 1 line gap before another paragraph]
+[403] Our goal is to provide a secure, transparent, and user-friendly environment for individuals looking to buy or sell digital accounts. [font size 12, spacing 1.15]
+[404] 1.3.1 Write a Sub-Point [font size 13, and camel case, spacing 1.5] 
+[405] Write some texts. [font size 12, spacing 1.15]
+[406] Table 1.1: Algorithms performance. [Table name: font 12, spacing 1.5, left alignment, Table 1.1 means the first table of Chapter 1]
+[407] Models
+[408] Accuracy
+[409] Precision
+[410] Recall
+[411] F1 score
+[412] Random Forest
+[413] 93.6606
+[414] 91.43
+[415] 86.49
+[416] 0.89
+[417] Extra Tree
+[418] 89.9083
+[419] 90.62
+[420] 78.38
+[421] 0.84
+[422] LR [font 12]
+[423] 88.9908
+[424] 85.71
+[425] 81.08
+[426] 0.83
+[427] 1.3.2 Write a Sub-Point [font size 13, and camel case, spacing 1.5] 
+[428] Write some texts. [font size 12, spacing 1.15]
+[429] 1.3.2.1 Write a Sub-Sub-Point [font size 12, and camel case, spacing 1.5] 
+[430] Write some texts. [font size 12, spacing 1.15]  
+[431] ……. (1)
+[432] [Equation font 12, use equation format and table, hide table border.]       
+[433] N.B.: Make the Table of Contents according to the Page Number.
+[434] References [font size 20]
+[435] T. Sasao and P. Besslich, “On the Complexity of Mod-2 Sum PLA’s”, IEEE transactions on Computers, Vol. 39, No. 2, February 1990. [Please use IEEE reference Format]
+[436] T. Sasao, “Input Variable Assignment and output phase optimization of PLA’s ”,IEEE  Transaction on Computers, Vol. C-30, September 1981.
+[437] A. Weinberger, “High Speed Programmable Logic Array”, IBM J. Res Develop, Vol. 23, No. 2, March 1979, pp. 163-178.
+[438] H. M. H. Babu, M. R. Islam, A. R. Chowdhury and S. M. A. Chowdhury, “Reversible Logic Synthesis for Minimization of Full-adder Circuit”, IEEE Conference on Digital System Design 2003, Euro-Micro’03, (Belek, Antalya, Turkey, 2003) 50-54.
+[439] D. Maslov and G. Dueck, “Reversible Cascades with Minimal Garbage”, IEEE Transactions on CAD, Vol. 23, issue 11, Nov. 2004, 1497-1509.
+[440] http://en.wikipedia.org/wiki/Suffix_tree (last accessed on 01-07-2009). [Font Size 11, spacing 1.5]
+[441] Must include the last accessed date.Must include the last accessed date. 
+[442] Must include the last accessed date.
+[443] Must include the last accessed date.
+[444]  
+[445]  
+[446]  

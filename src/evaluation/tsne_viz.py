@@ -122,11 +122,30 @@ def main():
     device = get_device()
     tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 
-    # Load full test + held-out for visualization
-    test_records = load_jsonl("data/processed/test.jsonl")
-    held_out_records = load_jsonl("data/processed/held_out_generalization.jsonl")
-    all_records = test_records + held_out_records
-    print(f"Visualizing {len(all_records)} samples ({len(test_records)} test + {len(held_out_records)} held-out)...")
+    # Load test + held-out from 25k dataset if available
+    data_dir = "data/processed_25k" if os.path.exists("data/processed_25k/test.jsonl") else "data/processed"
+    test_records = load_jsonl(os.path.join(data_dir, "test.jsonl"))
+    held_out_path = os.path.join(data_dir, "held_out_generalization.jsonl")
+    held_out_records = load_jsonl(held_out_path) if os.path.exists(held_out_path) else []
+    
+    # Subsample test records for crisp, legible 2D visualization (stratified sample of ~600 + all held-out)
+    if len(test_records) > 600:
+        import random
+        random.seed(42)
+        # Ensure hard negatives and all families are well-represented
+        by_fam = {}
+        for r in test_records:
+            fam = r.get("attack_family", "unknown")
+            by_fam.setdefault(fam, []).append(r)
+        sampled_test = []
+        for fam, items in by_fam.items():
+            k = min(len(items), 60)
+            sampled_test.extend(random.sample(items, k))
+        all_records = sampled_test + held_out_records
+    else:
+        all_records = test_records + held_out_records
+
+    print(f"Visualizing {len(all_records)} samples from {data_dir} ({len(held_out_records)} held-out)...")
 
     fig, axes = plt.subplots(1, 2, figsize=(18, 8))
     fig.patch.set_facecolor("#F8F9FA")
