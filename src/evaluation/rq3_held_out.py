@@ -48,14 +48,16 @@ def infer_model(model, tokenizer, records, device, is_contrastive=True):
 
     return all_true, all_pred, all_scores
 
-def run_rq3():
+def run_rq3(data_dir: str = None):
     device = get_device()
     tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 
     # Load held-out records
-    held_out_path = "data/processed/held_out_generalization.jsonl"
+    if data_dir is None:
+        data_dir = "data/processed_25k" if os.path.exists("data/processed_25k") else "data/processed"
+    held_out_path = os.path.join(data_dir, "held_out_generalization.jsonl")
     if not os.path.exists(held_out_path):
-        print("Held-out file not found. Run data builder first.")
+        print(f"Held-out file not found at {held_out_path}. Run data builder first.")
         sys.exit(1)
 
     held_out = load_jsonl(held_out_path)

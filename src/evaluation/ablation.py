@@ -19,7 +19,7 @@ from transformers import AutoTokenizer
 
 from src.models.detector import ContrastiveDetector
 from src.models.loss import SupervisedContrastiveLoss
-from src.train import PromptDataset, get_device, load_jsonl, evaluate_model
+from src.train import create_tensor_dataset, get_device, load_jsonl, evaluate_model
 from src.evaluation.metrics import evaluate_by_family
 
 
@@ -31,7 +31,7 @@ def set_seed(seed: int = 42):
         torch.cuda.manual_seed_all(seed)
 
 
-def run_hard_negative_ablation(epochs=5, batch_size=16, lr=2e-5, seed=42):
+def run_hard_negative_ablation(epochs=5, batch_size=64, lr=2e-5, seed=42, data_dir: str = None):
     """
     Trains a ContrastiveDetector on training data EXCLUDING benign_emotional_hard_negative.
     Tests on the exact same test set to measure False Positive Rate degradation.
@@ -42,10 +42,13 @@ def run_hard_negative_ablation(epochs=5, batch_size=16, lr=2e-5, seed=42):
     print(" 🔬 ABLATION: Training Contrastive Model WITHOUT Hard-Negatives")
     print("="*70)
 
+    if data_dir is None:
+        data_dir = "data/processed_25k" if os.path.exists("data/processed_25k") else "data/processed"
+
     # 1. Load full datasets
-    train_records = load_jsonl("data/processed/train.jsonl")
-    val_records = load_jsonl("data/processed/val.jsonl")
-    test_records = load_jsonl("data/processed/test.jsonl")
+    train_records = load_jsonl(os.path.join(data_dir, "train.jsonl"))
+    val_records = load_jsonl(os.path.join(data_dir, "val.jsonl"))
+    test_records = load_jsonl(os.path.join(data_dir, "test.jsonl"))
 
     # 2. Filter out benign_emotional_hard_negative from train and val
     filtered_train = [r for r in train_records if r.get("attack_family") != "benign_emotional_hard_negative"]
@@ -56,9 +59,13 @@ def run_hard_negative_ablation(epochs=5, batch_size=16, lr=2e-5, seed=42):
     print(f"Test set remains identical ({len(test_records)} samples) to evaluate real-world false alarm rate.")
 
     tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
-    train_loader = DataLoader(PromptDataset(filtered_train, tokenizer), batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(PromptDataset(filtered_val, tokenizer), batch_size=batch_size, shuffle=False)
-    test_loader = DataLoader(PromptDataset(test_records, tokenizer), batch_size=batch_size, shuffle=False)
+    train_ds, train_recs = create_tensor_dataset(filtered_train, tokenizer, max_length=96)
+    val_ds, val_recs = create_tensor_dataset(filtered_val, tokenizer, max_length=96)
+    test_ds, test_recs = create_tensor_dataset(test_records, tokenizer, max_length=96)
+
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
+    val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
+    test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False)
 
     model = ContrastiveDetector(model_name="distilbert-base-uncased").to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
@@ -72,10 +79,10 @@ def run_hard_negative_ablation(epochs=5, batch_size=16, lr=2e-5, seed=42):
         model.train()
         total_loss = 0.0
 
-        for batch in train_loader:
-            input_ids = batch["input_ids"].to(device)
-            attention_mask = batch["attention_mask"].to(device)
-            labels = batch["label"].to(device)
+        for input_ids, attention_mask, labels, _ in train_loader:
+            input_ids = input_ids.to(device)
+            attention_mask = attention_mask.to(device)
+            labels = labels.to(device)
 
             optimizer.zero_grad()
             cls_rep, proj_rep, logits = model(input_ids, attention_mask)
@@ -88,7 +95,7 @@ def run_hard_negative_ablation(epochs=5, batch_size=16, lr=2e-5, seed=42):
             optimizer.step()
             total_loss += loss.item()
 
-        val_metrics, _, _, _ = evaluate_model(model, val_loader, device, is_contrastive=True)
+        val_metrics, _, _, _ = evaluate_model(model, val_loader, val_recs, device, is_contrastive=True)
         val_f1 = val_metrics["f1"]
         print(f"  Epoch {epoch}/{epochs} | Loss: {total_loss/len(train_loader):.4f} | Val F1: {val_f1:.4f} | Val AUROC: {val_metrics['auroc']:.4f}")
 
@@ -98,7 +105,7 @@ def run_hard_negative_ablation(epochs=5, batch_size=16, lr=2e-5, seed=42):
 
     # Load best weights & evaluate on full test set
     model.load_state_dict(best_state)
-    test_metrics, all_recs, all_preds, all_scores = evaluate_model(model, test_loader, device, is_contrastive=True)
+    test_metrics, all_recs, all_preds, all_scores = evaluate_model(model, test_loader, test_recs, device, is_contrastive=True)
     family_breakdown = evaluate_by_family(all_recs, all_preds, all_scores)
 
     print("\n--- ABLATION RESULTS (Without Hard-Negatives) ---")
@@ -119,8 +126,8 @@ def run_hard_negative_ablation(epochs=5, batch_size=16, lr=2e-5, seed=42):
     }
 
 
-def main():
-    ablation_no_hn = run_hard_negative_ablation(epochs=5)
+def main(data_dir: str = None):
+    ablation_no_hn = run_hard_negative_ablation(epochs=5, data_dir=data_dir)
 
     # Load standard contrastive results for side-by-side comparison
     with open("experiments/contrastive_results.json", "r") as f:

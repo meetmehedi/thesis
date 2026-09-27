@@ -19,9 +19,15 @@ env/
 .ipynb_checkpoints/
 
 # Model weights (large binary files)
+*.pt
+*.bin
+*.safetensors
+*.zip
 experiments/*.pt
 experiments/*.bin
 experiments/*.safetensors
+colab experiments/*.pt
+colab experiments/*.bin
 
 # HuggingFace cache
 .cache/

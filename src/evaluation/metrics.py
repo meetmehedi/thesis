@@ -126,7 +126,14 @@ def profile_latency(
     model.eval()
     latencies = []
 
-    # Warmup — 20 passes to eliminate MPS cold-start spike from P95/P99
+    def _sync():
+        """Flush async GPU/MPS command queue so timings are wall-clock accurate."""
+        if device.type == "mps":
+            torch.mps.synchronize()
+        elif device.type == "cuda":
+            torch.cuda.synchronize()
+
+    # Warmup — 20 passes to eliminate cold-start spike from P95/P99
     warmup_texts = (sample_texts * 5)[:20]
     for text in warmup_texts:
         inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=128).to(device)
@@ -135,19 +142,20 @@ def profile_latency(
                 _ = model.encode(inputs["input_ids"], inputs["attention_mask"])
             else:
                 _ = model(inputs["input_ids"], inputs["attention_mask"])
-    if hasattr(torch, "mps"):
-        torch.mps.synchronize()  # Flush MPS command buffer before timing
+    _sync()  # Flush warmup queue before timing starts
 
     # Benchmarking
     for _ in range(runs):
         text = sample_texts[_ % len(sample_texts)]
         inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=128).to(device)
+        _sync()  # Ensure previous op is done before starting timer
         start_time = time.perf_counter()
         with torch.no_grad():
             if hasattr(model, "encode"):
                 _ = model.encode(inputs["input_ids"], inputs["attention_mask"])
             else:
                 _ = model(inputs["input_ids"], inputs["attention_mask"])
+        _sync()  # Wait for GPU op to finish before stopping timer
         end_time = time.perf_counter()
         latencies.append((end_time - start_time) * 1000.0)  # ms
 
